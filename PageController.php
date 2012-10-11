@@ -20,7 +20,9 @@ class PageController extends OntoWiki_Controller_Component
      */
     public function __call($action, $params)
     {
-        OntoWiki_Navigation::disableNavigation();
+        $owApp = OntoWiki::getInstance();
+        $owNavigation = $owApp->getNavigation();
+        $owNavigation->disableNavigation();
 
         $pagename = str_replace('Action', '', $action);
         $pageTitles = $this->_privateConfig->titles->toArray();
