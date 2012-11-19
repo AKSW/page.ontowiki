@@ -25,6 +25,21 @@ class PageController extends OntoWiki_Controller_Component
         $owNavigation->disableNavigation();
 
         $pagename = str_replace('Action', '', $action);
+        if ($pagename === 'index') {
+            // no action given... check config for a mapping of URL to static file
+            $mappings = array();
+            if (isset($this->_privateConfig->mappings)) {
+                $mappings = $this->_privateConfig->mappings->toArray();
+            }
+
+            $urlBase = $this->_owApp->getUrlBase();
+            foreach ($mappings as $key=>$mappingSpec) {
+                if ($mappingSpec['uri'] === $urlBase) {
+                    $pagename = $mappingSpec['page'];
+                    break;
+                }
+            }
+        }
         $pageTitles = $this->_privateConfig->titles->toArray();
 
         if (isset($pageTitles[$pagename])) {
