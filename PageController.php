@@ -48,6 +48,11 @@ class PageController extends OntoWiki_Controller_Component
             $this->view->placeholder('main.window.title')->set($this->_owApp->translate->_($pagename));
         }
 
+        if (!file_exists($this->_componentRoot.'page/'.$pagename.'.phtml')) {
+            $this->render('default');
+            return;
+        }
+
         $this->render($pagename);
     }
 }
