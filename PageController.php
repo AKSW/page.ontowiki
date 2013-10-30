@@ -1,17 +1,18 @@
 <?php
-
-require_once 'OntoWiki/Controller/Component.php';
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2013, {@link http://aksw.org AKSW}
+ * @license   http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
 
 /**
  * Controller for OntoWiki
  *
- * @category   OntoWiki
- * @package    OntoWiki_extensions_components_page
- * @author     Sebastian Dietzold <dietzold@informatik.uni-leipzig.de>
- * @author     Philipp Frischmuth <pfrischmuth@googlemail.com>
- * @copyright  Copyright (c) 2008, {@link http://aksw.org AKSW}
- * @license    http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
- * @version    $Id$
+ * @category OntoWiki
+ * @package  OntoWiki_Extensions_PAge
+ * @author   Sebastian Tramp <mail@sebastian.tramp.name>
+ * @author   Philipp Frischmuth <pfrischmuth@googlemail.com>
  */
 class PageController extends OntoWiki_Controller_Component
 {

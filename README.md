@@ -1,3 +1,7 @@
+# OntoWiki page extension
+
+Lightweight and easy way to provide custom landing pages.
+
 ## Usage 
 
 This extensions provides a generic `page` controller, which can be used to display pages (= actions).

@@ -20,7 +20,8 @@
   owconfig:config [
       a owconfig:Config;
       owconfig:id "titles";
-      :example "Example Page"
+      :example "Example Page";
+      :welcome "Welcome"
 ] ;
   doap:release :v1-0 .
 :v1-0 a doap:Version ;
