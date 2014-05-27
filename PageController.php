@@ -49,11 +49,18 @@ class PageController extends OntoWiki_Controller_Component
             $this->view->placeholder('main.window.title')->set($this->_owApp->translate->_($pagename));
         }
 
-        if (!file_exists($this->_componentRoot.'page/'.$pagename.'.phtml')) {
+        // check for configured page base directory
+        $pageBaseDir = $this->_componentRoot.'page/';
+        if (isset($this->_privateConfig->directories->pageBase)) {
+            $pageBaseDir = ONTOWIKI_ROOT . $this->_privateConfig->directories->pageBase;
+            $this->view->addScriptPath($pageBaseDir);
+        }
+
+        if (!file_exists($pageBaseDir . $pagename . '.phtml')) {
             $this->render('default');
             return;
         }
 
-        $this->render($pagename);
+        $this->render($pagename, null, true);
     }
 }
